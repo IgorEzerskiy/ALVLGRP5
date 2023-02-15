@@ -2,7 +2,6 @@ from datetime import date
 
 
 class Product:
-
     def __init__(self, price, name, valid_till,
                  category, edible=True):
         self.price = price
@@ -23,8 +22,17 @@ class Cart:
         return 1
 
     def calculate_total(self):
+        """
+        goods_list = [(item1(Product), qty), (item2, qty)]
+        :return:
+        """
         return sum([itm.price * qty for itm, qty in self.goods_list]) * self._thursday_discount()
 
+"""
+ [(bread, 2), (water, 1)] -> [x for x in self.goods_list] -> x = (bread, 2) |> x = (water, 1)
+                             [x, y for x, y in self.goods_list] -> x = bread(Product), y = 2
+                             |> bread.price * 2, |> 
+"""
 
 if __name__ == '__main__':
     water = Product(price=15, name='Blue water', valid_till='31/12/2023', category='water')
