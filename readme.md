@@ -11,3 +11,4 @@ _read_: https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson1
 _slides_: https://docs.google.com/presentation/d/1iCZXuzMG4zMOougelyefTmQRIbE1FBvWdQntnwwuE7g/edit?usp=sharing
 
 _read_: https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson16.md
+ 

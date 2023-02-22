@@ -1,4 +1,4 @@
-from datetime import date
+import datetime as dt
 
 
 class Product:
@@ -16,7 +16,7 @@ class Cart:
         self.goods_list = goods_list
 
     def _thursday_discount(self):
-        today = date.today().isoweekday()
+        today = dt.date.today().isoweekday()
         if today == 4:
             return 0.9
         return 1
