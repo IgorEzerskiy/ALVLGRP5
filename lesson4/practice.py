@@ -7,6 +7,7 @@ name == main блоці.
 записати в файл logs.txt повідомлення у вигляді: %дата% %час% | %traceback%
 """
 import csv
+import datetime
 import traceback
 
 
@@ -24,11 +25,33 @@ some_another_mail@mail.com\n
 
 
 class Employee:
-    def __init__(self, name, email):
+    def __init__(self, name, last_name, date_of_birth,email):
         self.name = name
+        self.last_name = last_name
+        self.date_of_birth = date_of_birth
         self.email = email
         self.validate()
         self.save_email()
+        self._last_action = datetime.datetime.now()
+
+    @property
+    def full_name(self):
+        return f"{self.name} {self.last_name}"
+
+    @property
+    def age(self):
+        """
+        calculate full years of employee
+        :return:
+        """
+
+    @property
+    def last_action(self):
+        return self._last_action
+
+    @last_action.setter
+    def last_action(self, dt_obj):
+        self._last_action = dt_obj
 
     def save_email(self):
         with open('emails.csv', 'a') as csv_file:
@@ -44,7 +67,9 @@ class Employee:
 
 
 def main():
-    emp1 = Employee('alex', 'alex@mail.com')
+    emp1 = Employee('alex', 'mercer', 'alex@mail.com')
+    print(emp1.full_name)
+
 
 
 if __name__ == '__main__':

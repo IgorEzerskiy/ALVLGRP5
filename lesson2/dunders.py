@@ -8,6 +8,10 @@ class Employee:
         self.age = age
         self.gender = gender
 
+    @classmethod
+    def __new__(cls, *args, **kwargs):
+        pass
+
     def __str__(self):
         return f"{self.__class__.__name__}: {self.name}"
 
